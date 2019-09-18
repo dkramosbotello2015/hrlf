@@ -40,9 +40,9 @@
 
       var options = {
         title: "Ventas por Articulo",
-        width: 800,
+        width: 700,
         height: 600,
-        bar: {groupWidth: "95%"},
+        bar: {groupWidth: "60%"},
         legend: { position: "center" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
@@ -55,21 +55,42 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <!-- graficas -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h4 class="text-white">Menu</h4>
-      <span class="btn btn-primary">Usuarios</span>
+      <a href="validaraccesotipousuario/">
+        <span class="btn btn-primary">Admin Usuarios</span>
+      </a>
       <a href="vistafacturas/">
         <span class="btn btn-primary">Facturas</span>
       </a>
-      <a href="/dashboardventasusuario">
-        <span class="btn btn-success">Ventas acumuladas</span>
+      <a href="vistaarticulos/">
+        <span class="btn btn-primary">Mnto. Articulos</span>
       </a>
-      <span class="btn btn-primary"></span>
+      <a href="dashboardventasusuario/">
+        <span class="btn btn-light">Estadisticas por Usuario</span>
+      </a>
+      <a href="gerencial/">
+        <span class="btn btn-light">Estadisticas Gerencia</span>
+      </a>
+      
       <a href="{{ url('vistafacturas/') }}">
-        <span class="btn btn-primary btn-sm float-right">Cerrar</span>  
+        <span class="btn btn-primary btn-sm float-right"> Cerrar </span>  
       </a>
+
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
@@ -81,14 +102,14 @@
 
 <div class="container-fluid">
 <br><br>
-
  <div class="row">
-    <div class="col-sm-6">
-      <p class="h1">Ventas por Artículos</p>
+    <div class="col-sm-5">
+      <p class="h1">Ventas por Artículos </p>
+
       <p class="h4">Estatisticas generales</p>
       <div id="columnchart_values" style="width: 90%; height: 100%;"></div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <table class="table">
           <p class="h3">Rentabilidad por artículos</p>
           <p class="h5">Desgloce de rentabilidad por artículos</p>
@@ -148,6 +169,12 @@
             </tr>
           @endforeach
         </table>
+    </div>
+    <div class="col-sm-3 text-center">
+      <h4>Puntos Acumulados</h4>
+      <h4>
+        <button type="button" class="btn btn-outline-primary">{{$PuntosUsuario}}</button>
+      </h4>
     </div>
 </div>
 

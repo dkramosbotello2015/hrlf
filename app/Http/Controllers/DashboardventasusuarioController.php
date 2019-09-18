@@ -13,21 +13,23 @@ class DashboardventasusuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
+        $data = $request->session()->all();
         $ventasusuario   = DB::select('call CalcVentasUsuario(?,?)',array(1, 1));
         $tamLineas       = count($ventasusuario);
 
         $Rentabilidad    = DB::select('call CalcVentasUsuario(?,?)',array(1, 2));
         $usuarioasignado = DB::select('call CalcVentasUsuarioUsuariosAsociados(?,?)',array(1,1));
+        $gPuntosAcumulados   = DB::select('call GraficasGerenciales(?,?)',array(3, $data["usuario"]));
         // var_dump($ventasusuario);
 
         return view('usuarios.dashboardventasusuario', 
                         ["tamLineas"            => $tamLineas, 
                          "ventasusuario"        => $ventasusuario,
                          "Rentabilidad"         => $Rentabilidad,
-                         "UsuariosAsigna"       => $usuarioasignado
+                         "UsuariosAsigna"       => $usuarioasignado,
+                         "PuntosUsuario"        => $gPuntosAcumulados[0]->PuntosUsuario
                         ]
                     );
     }

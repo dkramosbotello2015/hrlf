@@ -24,7 +24,10 @@
         <span class="btn btn-primary">Mnto. Articulos</span>
       </a>
       <a href="dashboardventasusuario/">
-        <span class="btn btn-light">Estadisticas</span>
+        <span class="btn btn-light">Estadisticas por Usuario</span>
+      </a>
+      <a href="gerencial/">
+        <span class="btn btn-light">Estadisticas Gerencia</span>
       </a>
       
       <a href="{{ url('vistafacturas/') }}">
@@ -41,7 +44,6 @@
 </div>
 
 <div class="container-fluid">
-<br><br>
 <h1>Administracion de Usuarios</h1>
 <br><br><br>
 <table id="usuarios" class="table table-striped table-bordered" style="width:100%">
