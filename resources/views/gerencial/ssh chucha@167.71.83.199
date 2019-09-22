@@ -1,0 +1,16 @@
+ ssh chucha@167.71.83.199
+ password: Chucha2019
+ cd /var/www/html/hrlf/
+
+
+ git add . 
+ git commit -m "COMENTARIO"
+ git push origin master
+
+
+
+ moulinaem
+
+
+ dkramosbotello2015
+ Mimariadelcielo1.

@@ -23,23 +23,24 @@
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h4 class="text-white">Menu</h4>
-      <a href="validaraccesotipousuario/">
+
+      <a href={{url('validaraccesotipousuario')}}>
         <span class="btn btn-primary">Admin Usuarios</span>
       </a>
-      <a href="vistafacturas/">
+      <a href={{url('vistafacturas')}}>
         <span class="btn btn-primary">Facturas</span>
       </a>
-      <a href="vistaarticulos/">
+      <a href={{url('vistaarticulos')}}>
         <span class="btn btn-primary">Mnto. Articulos</span>
       </a>
-      <a href="dashboardventasusuario/">
+      <a href={{url('dashboardventasusuario')}}>
         <span class="btn btn-light">Estadisticas por Usuario</span>
       </a>
-      <a href="gerencial/">
+      <a href={{url('gerencial')}}>
         <span class="btn btn-light">Estadisticas Gerencia</span>
       </a>
       
-      <a href="{{ url('vistafacturas/') }}">
+      <a href={{url('vistaarticulos')}}"{{ url('vistafacturas/') }}">
         <span class="btn btn-primary btn-sm float-right"> Cerrar </span>  
       </a>
 
