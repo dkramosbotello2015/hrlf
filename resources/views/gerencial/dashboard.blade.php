@@ -52,6 +52,7 @@
     </button>
   </nav>
 </div>
+
 <br><br><br>
 <div class="container-fluid">
     <p class="h1 text-center">ESTADISTICAS GERENCIALES </p>
